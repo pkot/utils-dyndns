@@ -1,0 +1,24 @@
+DynDNS: simple shell script to update DNS entry with a current IP address
+
+The aim of the script is to automate changing of an IP address in the DNS
+config. Script reads current IP address and if it has changed, updates
+bind configuration file and uploads it via ssh to a remote server and runs
+update command.
+
+All zones to be updated shall be located in subdirectories. Each
+subdirectory shall contain .config file with env variables to be defined.
+
+Variables to be configured in .config in each directory:
+  TMPL: name of the file with the template (local)
+  OUTFILE: name of the resulting zone file (local)
+
+  SSH_PARAMS, SCP_PARAMS: parameters to be passed to ssh/scp
+
+  SSH_SRV: name of the remote server
+
+  DESTFILE: name od the target zone file (remote)
+
+  SSH_CMD: script to be executed to refresh data (remote)
+
+Template file should use two variables: %SERIAL% and %IP%.
+

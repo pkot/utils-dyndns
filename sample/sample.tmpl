@@ -1,0 +1,36 @@
+$ORIGIN bezsensu.pl.
+$TTL 3600
+@		IN	SOA	ns1.slackware.pl.	hostmaster.slackware.pl. (
+		    %SERIAL%	; serial
+		    86400	; refresh
+		    7200	; retry
+		    720000	; expire
+		    3600	; minimum
+		    )
+@		IN	NS	ns1.slackware.pl.
+@		IN	NS	fns1.42.pl.
+@		IN	NS	fns2.42.pl.
+@		IN	A	%IP% 		; home, sweet home
+@		IN	MX	1 ASPMX.L.GOOGLE.COM.
+@		IN	MX	5 ALT1.ASPMX.L.GOOGLE.COM.
+@		IN	MX	5 ALT2.ASPMX.L.GOOGLE.COM.
+@		IN	MX	10 ASPMX2.GOOGLEMAIL.COM.
+@		IN	MX	10 ASPMX3.GOOGLEMAIL.COM. 
+@		IN	MX	10 ASPMX4.GOOGLEMAIL.COM.
+@		IN	MX	10 ASPMX5.GOOGLEMAIL.COM. 
+;*		IN	MX	5 bezsensu.pl.
+bezsensu.pl.	IN	TXT	"v=spf1 a mx ~all"
+www		IN	A	%IP% 		; home, sweet home
+wiki		IN	CNAME	bezsensu.pl.
+photo		IN	CNAME	bluzg.slackware.pl.
+openid		IN	CNAME	www.myopenid.com.
+googleffffffffa9615520	IN	CNAME	google.com.
+mail		IN	CNAME	ghs.google.com.
+docs		IN	CNAME	ghs.google.com.
+calendar	IN	CNAME	ghs.google.com.
+majaka		IN	CNAME	bezsensu.pl.
+pkot		IN	CNAME	bezsensu.pl.
+test		IN	CNAME	bezsensu.pl.
+aws		IN	CNAME	ec2-35-163-156-167.us-west-2.compute.amazonaws.com.
+bezsensu.pl.	IN	TXT	"google-site-verification=upzfRmkkVomLdb7QsQLSLdNGgFGZSUPQW3q4Mgn7GAg"
+
