@@ -36,11 +36,11 @@ echo $DATE > date.txt
 
 for entry in "$SEARCH_DIR"/*
 do
-	if [ -d "$entry" ]
+	if [ -d "$entry" ] && [ "$entry" != "./@eaDir" ] && [ $entry != "./sample" ]
 	then
 		cd $entry
 		source ./.config
-		echo $TMPl
+		echo $TMPL
 		cat $TMPL | sed s/%SERIAL%/$DATE`printf "%02g" $SEQ`/g | sed s/%IP%/$IP/g > $OUTFILE
 		scp $SCP_PARAMS $OUTFILE $SSH_SRV:$DESTFILE
 		ssh $SSH_PARAMS $SSH_SRV "$SSH_CMD"
